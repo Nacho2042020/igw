@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Clash Royale — Historia, cartas, mazos y comunidad</title>
+    <meta name="description" content="Origen de Clash Royale, clasificación de cartas, mazos clásicos, estrategias y recursos para la comunidad de jugadores.">
+    <meta name="author" content="Página informativa no oficial">
+    <style>
+        :root{
+            --bg-1: #0b3766;
+            --bg-2: #1e6fb3;
+            --accent: #f5c94e;
+            --card-bg: rgba(255,255,255,0.98);
+            --muted: #65758a;
+            --radius: 12px;
+            --shadow: 0 6px 18px rgba(2,12,30,0.25);
+            --gap: 20px;
+        }
+        html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#072135}
+        body{background:linear-gradient(180deg,var(--bg-1),var(--bg-2));background-attachment:fixed;padding:24px}
+        .container{max-width:1100px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.02));padding:24px;border-radius:16px}
+        header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+        .logo{display:flex;align-items:center;gap:12px}
+        .logo .badge{width:48px;height:48px;border-radius:8px;background:linear-gradient(45deg,#f7b733,#ff6a00);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+        nav ul{display:flex;gap:12px;list-style:none;padding:0;margin:0}
+        nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:8px}
+        nav a:hover{background:rgba(255,255,255,0.06)}
+        .cta{display:flex;gap:8px}
+        .btn{background:var(--accent);color:#072135;padding:10px 14px;border-radius:999px;border:none;font-weight:600;cursor:pointer;box-shadow:var(--shadow)}
+        .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.12)}
+        /* Hero */
+        .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:18px}
+        .hero h1{font-size:38px;color:#fff;margin:0 0 8px}
+        .hero p{color:rgba(255,255,255,0.9);margin:0 0 12px}
+        .hero .links{display:flex;gap:10px}
+        .hero-ill{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));border-radius:16px;padding:16px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
+        /* Sections */
+        section{background:var(--card-bg);border-radius:var(--radius);padding:18px;margin-top:18px;box-shadow:var(--shadow)}
+        h2{margin-top:0}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--gap)}
+        .rarity{display:flex;align-items:center;gap:12px}
+        .swatch{width:36px;height:36px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+        .sw-common{background:#9aa5b1}
+        .sw-rare{background:#ff9f1c}
+        .sw-epic{background:#7b4fc0}
+        .sw-legend{background:linear-gradient(45deg,#ffd86b,#ff7b7b)}
+        .sw-champ{background:#ffd700}
+        table{width:100%;border-collapse:collapse}
+        table th,table td{padding:8px;border-bottom:1px solid #e9eef2;text-align:left}
+        .deck{background:linear-gradient(180deg,#fff,#fbfdff);padding:12px;border-radius:10px}
+        .tags{display:flex;gap:8px;flex-wrap:wrap}
+        .tag{background:#eef6ff;color:#0b3b66;padding:6px 8px;border-radius:999px;font-size:13px}
+        .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+        .creator{display:flex;flex-direction:column;align-items:center;padding:12px;text-align:center}
+        .meta-list{display:flex;flex-direction:column;gap:8px}
+        .meta-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:8px;border:1px solid #eef3f8}
+        /* Footer */
+        footer{margin-top:18px;color:#fff;text-align:center}
+        /* Responsive */
+        @media(max-width:880px){.hero{grid-template-columns:1fr;}.container{padding:16px}}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            // Simple search for counters
+            const input = document.getElementById('counter-search');
+            if(input){
+                input.addEventListener('input',function(){
+                    const q = this.value.trim().toLowerCase();
+                    document.querySelectorAll('.counter-item').forEach(el=>{
+                        const name = el.dataset.name.toLowerCase();
+                        const txt = el.textContent.toLowerCase();
+                        el.style.display = (q === '' || name.includes(q) || txt.includes(q))? 'flex' : 'none';
+                    })
+                })
+            }
+            // Smooth anchor scroll
+            document.querySelectorAll('a[href^="#"]').forEach(a=>{
+                a.addEventListener('click',e=>{
+                    e.preventDefault();
+                    const target = document.querySelector(a.getAttribute('href'));
+                    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="container" role="document">
+        <header>
+            <div class="logo">
+                <div class="badge" aria-hidden>CR</div>
+                <div>
+                    <div style="color:#eec318;font-weight:700">Clash Royale</div>
+                    <div style="font-size:12px;color:var(--accent)">Historia · Cartas · Mazos · Comunidad</div>
+                </div>
+            </div>
+            <nav aria-label="Principal">
+                <ul>
+                    <li><a href="#top">Inicio</a></li>
+                    <li><a href="#historia">Historia</a></li>
+                    <li><a href="#cartas">Cartas</a></li>
+                    <li><a href="#mazos">Mazos clásicos</a></li>
+                    <li><a href="#estrategias">Estrategias</a></li>
+                    <li><a href="#comunidad">Comunidad</a></li>
+                    <li><a href="#esports">Esports</a></li>
+                    <li><a href="https://supercell.com/store/" target="_blank" rel="noopener">Tienda</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="cta">
+                <button class="btn" onclick="location.href='#mazos'">Ver mazos meta</button>
+                <button class="btn ghost" onclick="document.getElementById('counter-search').focus()">Buscar cartas</button>
+            </div>
+        </header>
+
+        <main>
+            <section id="top" class="hero" aria-labelledby="hero-title">
+                <div>
+                    <h1 id="hero-title" style="color: #000000;">Todo sobre Clash Royale</h1>
+                    <p>Origen, cartas, mazos clásicos, meta y comunidad — guía no oficial.</p>
+                    <div class="links">
+                        <button class="btn" onclick="location.href='#historia'">Historia</button>
+                        <button class="btn" onclick="location.href='#mazos'">Mazos clásicos</button>
+                        <button class="btn" onclick="location.href='#estrategias'" style="color: #000000;">Guía de mazos</button>
+                    </div>
+                </div>
+                <div class="hero-ill" aria-hidden>
+-                    <!-- Ilustración SVG placeholder -->
+-                    <svg width="360" height="220" viewBox="0 0 360 220" img="R.jpg" role="img" aria-label="Ilustración temática Clash Royale">
+-                        <rect width="100%" height="100%" rx="12" fill="url(#g)" />
+-                        <defs>
+-                            <linearGradient id="g" x1="0" x2="1">
+-                                <stop offset="0" stop-color="#ffd86b"/>
+-                                <stop offset="1" stop-color="#ff7b7b"/>
+-                            </linearGradient>
+-                        </defs>
+-                        <g fill="#fff" opacity="0.95">
+-                            <circle cx="60" cy="120" r="28" />
+-                            <circle cx="120" cy="70" r="40" />
+-                            <rect x="200" y="60" width="110" height="90" rx="10" />
+-                        </g>
+-                        <text x="20" y="200" fill="#072135" font-size="12">Ilustración de héroes - placeholder</text>
+-                    </svg>
++                    <!-- Reemplaza por una imagen: guarda assets/hero.jpg en el proyecto -->
++                    <img src="R.jpg" alt="Ilustración temática de Clash Royale" style="width:100%;height:auto;border-radius:12px;display:block;object-fit:cover">
+                </div>
+            </section>
+
+            <section id="historia" aria-labelledby="h-historia">
+                <h2 id="h-historia">Creación y origen</h2>
+                <p>Clash Royale nació como un proyecto derivado de las ideas de Clash of Clans combinando cartas y batallas en tiempo real. Tras varios soft launches regionales, el juego tuvo su lanzamiento global en marzo de 2016.</p>
+                <div class="grid">
+                    <div>
+                        <h3>Línea temporal</h3>
+                        <ol>
+                            <li>Idea & concepto — integración con Clash of Clans.</li>
+                            <li>Soft launches (varias regiones) — pruebas y ajustes.</li>
+                            <li>Marzo 2016 — lanzamiento global.</li>
+                            <li>Introduce Champions, nuevos modos y cambios de economía en años siguientes.</li>
+                        </ol>
+                    </div>
+                    <aside>
+                        <h3>Datos rápidos</h3>
+                        <ul>
+                            <li>Desarrollador: Supercell</li>
+                            <li>Plataformas: iOS, Android</li>
+                            <li>Género: Estrategia en tiempo real / Cartas coleccionables</li>
+                        </ul>
+                        <p><strong>Sugerencia multimedia:</strong> incluye el video oficial o capturas de la App Store para mostrar la estética del juego.</p>
+                    </aside>
+                </div>
+            </section>
+
+            <section id="cartas" aria-labelledby="h-cartas">
+                <h2 id="h-cartas">Clasificación de cartas y rarezas</h2>
+                <p>Las cartas se agrupan por rareza y tipo; su rareza afecta la frecuencia de aparición y el coste para subirlas de nivel.</p>
+                <div class="grid">
+                    <div>
+                        <h3>Rarezas (visual)</h3>
+                        <div class="rarity">
+                            <div class="swatch sw-common">C</div>
+                            <div>
+                                <strong>Common</strong>
+                                <div class="tags"><span class="tag">Frecuente</span><span class="tag">Fácil de subir</span></div>
+                            </div>
+                        </div>
+                        <div class="rarity">
+                            <div class="swatch sw-rare">R</div>
+                            <div>
+                                <strong>Rare</strong>
+                                <div class="tags"><span class="tag">Menos frecuente</span><span class="tag">Soporta combos</span></div>
+                            </div>
+                        </div>
+                        <div class="rarity">
+                            <div class="swatch sw-epic">E</div>
+                            <div>
+                                <strong>Epic</strong>
+                                <div class="tags"><span class="tag">Única</span><span class="tag">Modifica mazos</span></div>
+                            </div>
+                        </div>
+                        <div class="rarity">
+                            <div class="swatch sw-legend">L</div>
+                            <div>
+                                <strong>Legendary</strong>
+                                <div class="tags"><span class="tag">Muy rara</span><span class="tag">Impacta el meta</span></div>
+                            </div>
+                        </div>
+                        <div class="rarity">
+                            <div class="swatch sw-champ">CH</div>
+                            <div>
+                                <strong>Champion</strong>
+                                <div class="tags"><span class="tag">Última categoría</span><span class="tag">Control de partidas</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Tabla resumida</h3>
+                        <table aria-describedby="h-cartas">
+                            <thead>
+                                <tr><th>Rareza</th><th>Método de obtención</th><th>Recomendación estratégica</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Common</td><td>Cofres / Challenges</td><td>Buena para ciclo y soporte</td></tr>
+                                <tr><td>Rare</td><td>Cofres / Tienda</td><td>Usadas para combos y control</td></tr>
+                                <tr><td>Epic</td><td>Cofres especiales / Intercambios</td><td>Influyen en la sinergia del mazo</td></tr>
+                                <tr><td>Legendary</td><td>Eventos / Tienda / Cofres</td><td>Win conditions y plays decisivos</td></tr>
+                                <tr><td>Champion</td><td>Eventos especiales / Pase</td><td>Alto impacto estratégico</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="evolucion" aria-labelledby="h-evolucion">
+                <h2 id="h-evolucion">Evolución del juego</h2>
+                <p>El juego recibe constantes actualizaciones: nuevas cartas, modos, Champions y cambios de balance que moldean el meta.</p>
+                <ul>
+                    <li>Llegada de Champions — cambió el enfoque en control y objetivos.</li>
+                    <li>Introducción de nuevos modos temporales y eventos por temporadas.</li>
+                    <li>Cambios en la tienda y sistemas de monetización (pases y ofertas).</li>
+                </ul>
+            </section>
+
+            <section id="mazos" aria-labelledby="h-mazos">
+                <h2 id="h-mazos">Mazos clásicos y teoría detrás</h2>
+                <p>Los arquetipos definen la identidad de un mazo. Aquí hay ejemplos y por qué funcionan.</p>
+                <div class="grid">
+                    <div class="deck">
+                        <h3>Cycle / Fast cycle (Hog Cycle)</h3>
+                        <p>Teoría: rápido ciclo de cartas para aplicar presión constante con una win condition barata.</p>
+                        <p><strong>Ejemplo:</strong> Hog Rider, Ice Spirit, Skeletons, Cannon, Fireball, Log, Musketeer, Ice Golem (Coste medio: 3.1)</p>
+                    </div>
+                    <div class="deck">
+                        <h3>Beatdown (Golem)</h3>
+                        <p>Teoría: construir un empuje pesado con tanque y soporte para romper torres.</p>
+                        <p><strong>Ejemplo:</strong> Golem, Night Witch, Baby Dragon, Tornado, Mega Minion, Lightning, Lumberjack, Elixir Collector.</p>
+                    </div>
+                    <div class="deck">
+                        <h3>Bridge Spam / Quick pressure</h3>
+                        <p>Teoría: generar amenazas en el puente para forzar rotaciones y errores.</p>
+                        <p><strong>Ejemplo:</strong> Bandit, Battle Ram, Dark Prince, Electro Wizard, Poison, Minions, Fisherman.</p>
+                    </div>
+                    <div class="deck">
+                        <h3>Siege (Mortar / X-Bow)</h3>
+                        <p>Teoría: controlar el tempo y atacar desde distancia, exigente en posicionamiento.</p>
+                    </div>
+                    <div class="deck">
+                        <h3>Bait / Chip</h3>
+                        <p>Teoría: forzar el uso de hechizos enemigos y puntear daño a la torre.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="evoluciones" aria-labelledby="h-evoluciones">
+                <h2 id="h-evoluciones">Evoluciones de cartas</h2>
+                <p>Las cartas reciben buffs/nerfs y se introducen mecánicas nuevas que alteran el meta. Consulta el historial de cambios para ver el impacto por parche.</p>
+            </section>
+
+            <section id="estrategias" aria-labelledby="h-estrategias">
+                <h2 id="h-estrategias">Estrategias prácticas</h2>
+                <h3>Fase de inicio</h3>
+                <p>Explora, gestiona el elixir y evita commits innecesarios.</p>
+                <h3>Fase media</h3>
+                <p>Construye empujes, defiende y busca contrajuego oportuno.</p>
+                <h3>Final</h3>
+                <p>Maximiza elixir, juega segura y busca errores del rival.</p>
+                <p>Micro-plays: pull, kite, split-lane, baiting spells. Consejo: practica en desafíos y torneos.</p>
+            </section>
+
+            <section id="comunidad" aria-labelledby="h-comunidad">
+                <h2 id="h-comunidad">Opiniones y comunidad</h2>
+                <p>Foros, Reddit, Discord y creadores generan debates sobre balance, mazos y metas. Incluye extractos de hilos destacados para contexto.</p>
+                <div class="card-grid">
+                    <div class="creator">
+                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_nBiAlsLYVgvCMI1q--JQiPw12WECp3CCVK7u8kgymzGhA=s176-c-k-c0x00ffffff-no-rj-mo" alt="Orange Juice" width="48" height="48">
+                        <strong>Orange Juice (OJ)</strong>
+                        <small>Guías y análisis</small>
+                        <a href="https://www.youtube.com/c/OrangeJuiceGaming" target="_blank" rel="noopener">Canal</a>
+                    </div>
+                    <div class="creator">
+                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_mkXJa2XHG7c66zXlVmjaL_OEaFSGgdnVgjiY26MNi8Sqw=s176-c-k-c0x00ffffff-no-rj-mo" alt="BENIJU" width="48" height="48">
+                        <strong>BENIJU</strong>
+                        <small>Contenido variado</small>
+                        <a href="https://www.youtube.com/c/BENIJU" target="_blank" rel="noopener">Canal</a>
+                    </div>
+                    <div class="creator">
+                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_lw79WG-WAItVFz4Gan7rVuFBNoo-fpa31YGwtdoheJiJc=s176-c-k-c0x00ffffff-no-rj-mo" alt="Surgical Goblin" width="48" height="48">
+                        <strong>Surgical Goblin</strong>
+                        <small>Competitivo y análisis</small>
+                        <a href="https://www.youtube.com/c/Surgical Goblin" target="_blank" rel="noopener">Canal</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="esports" aria-labelledby="h-esports">
+                <h2 id="h-esports">Esports y tops mundiales</h2>
+                <p>Clash Royale League (CRL) y torneos oficiales conectan la escena competitiva. Consulta RoyaleAPI y DeckShop para leaderboards y estadísticas.</p>
+            </section>
+
+            <section id="meta" aria-labelledby="h-meta">
+                <h2 id="h-meta">Meta actual y mazos del momento</h2>
+                <div class="meta-list">
+                    <div class="meta-item"><div><strong>Montapuercos Ciclo 2.6</strong> — Ciclado Rápido</div><div class="tag">Winrate: 62%</div></div>
+                    <div class="meta-item"><div><strong>Golem Beatdown</strong> — Beatdown</div><div class="tag">Winrate: 49%</div></div>
+                    <div class="meta-item"><div><strong>Log Bait Clásico</strong> — Ciclado Rapido</div><div class="tag">Winrate: 58%</div></div>
+                    <small style="color:var(--muted)">Fuente sugerida: RoyaleAPI / DeckShop (actualizar vía API para datos reales)</small>
+                </div>
+            </section>
+
+            <section id="equipo" aria-labelledby="h-equipo">
+                <h2 id="h-equipo">Desarrolladores / Equipo</h2>
+                <p>Supercell — estudio finlandés responsable de Clash Royale y Clash of Clans. Filosofía centrada en diseño de alta calidad y experiencia móvil.</p>
+            </section>
+
+            <section id="matchmaking" aria-labelledby="h-matchmaking">
+                <h2 id="h-matchmaking">Matchmaking y sistema de emparejamiento</h2>
+                <p>El emparejamiento principal usa trofeos para equilibrar partidas. Modos especiales pueden usar reglas distintas (p. ej. desafíos, torneos).</p>
+            </section>
+
+            <section id="recursos" aria-labelledby="h-recursos">
+                <h2 id="h-recursos">Páginas relacionadas / Recursos</h2>
+                <ul>
+                    <li><a href="https://store.supercell.com/es/clashroyale" target="_blank" rel="noopener">Supercell Store</a></li>
+                    <li><a href="https://clashroyale.fandom.com/wiki/Clash_Royale_Wiki" target="_blank" rel="noopener">Clash Royale Wiki</a></li>
+                    <li><a href="https://royaleapi.com/" target="_blank" rel="noopener">RoyaleAPI</a></li>
+                    <li><a href="https://deckshop.pro/" target="_blank" rel="noopener">DeckShop</a></li>
+                </ul>
+            </section>
+
+            <section id="contacto" aria-labelledby="h-contacto">
+                <h2 id="h-contacto">Contacto</h2>
+                <p>Click<a href="https://support.supercell.com/es/index.html" target="_blank"> aquí</a> para acceder a la página de soporte de Supercell</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Enlaces rápidos: <a href="#historia">Historia</a> · <a href="#cartas">Cartas</a> · <a href="#mazos">Mazos</a> · <a href="#esports">Esports</a></p>
+            <p style="font-size:12px;color:rgba(255,255,255,0.7)">Créditos: información referenciada de Wikipedia, Clash Royale Wiki, RoyaleAPI. Esta página es no oficial y con fines informativos.</p>
+        </footer>
+    </div>
+</body>
+</html>
