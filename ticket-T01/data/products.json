@@ -1,0 +1,14 @@
+{
+  "products": [
+    {"id": "p1", "title": "Camiseta Técnica Pro", "category": "men", "price": "49990", "image": "images/camiseta.svg", "sizes": ["S","M","L","XL"], "colors":[{"name":"Azul","hex":"#1e90ff"},{"name":"Negro","hex":"#111827"},{"name":"Blanco","hex":"#ffffff"}]},
+    {"id": "p2", "title": "Legging RS", "category": "women", "price": "59990", "image": "images/legging.svg", "sizes": ["XS","S","M","L"], "colors":[{"name":"Negro","hex":"#111827"},{"name":"Malva","hex":"#a78bfa"}]},
+    {"id": "p3", "title": "Zapatillas Fly", "category": "men", "price": "89990", "image": "images/zapatillas.svg", "sizes": ["40","41","42","43"], "colors":[{"name":"Blanco","hex":"#ffffff"},{"name":"Gris","hex":"#9ca3af"},{"name":"Azul","hex":"#1e90ff"}]},
+    {"id": "p4", "title": "Short Runlight", "category": "men", "price": "39990", "image": "images/short.svg", "sizes": ["S","M","L"], "colors":[{"name":"Verde","hex":"#10b981"},{"name":"Negro","hex":"#111827"}]},
+    {"id": "p5", "title": "Campera Wind", "category": "women", "price": "79990", "image": "images/campera.svg", "sizes": ["S","M","L","XL"], "colors":[{"name":"Rojo","hex":"#ef4444"},{"name":"Negro","hex":"#111827"}]},
+    {"id": "p6", "title": "Media Compresión", "category": "kids", "price": "19990", "image": "images/media.svg", "sizes": ["T2","T4","T6"], "colors":[{"name":"Azul","hex":"#60a5fa"},{"name":"Rosa","hex":"#fb7185"}]},
+    {"id": "p7", "title": "Remera Entreno", "category": "men", "price": "29990", "image": "images/remera.svg", "sizes": ["S","M","L","XL"], "colors":[{"name":"Gris","hex":"#9ca3af"},{"name":"Negro","hex":"#111827"}]},
+    {"id": "p8", "title": "Top Deportivo", "category": "women", "price": "27990", "image": "images/top.svg", "sizes": ["XS","S","M"], "colors":[{"name":"Rosa","hex":"#fb7185"},{"name":"Lilac","hex":"#c4b5fd"}]},
+    {"id": "p9", "title": "Short Niño", "category": "kids", "price": "24990", "image": "images/short-kid.svg", "sizes": ["T4","T6","T8"], "colors":[{"name":"Azul","hex":"#60a5fa"},{"name":"Amarillo","hex":"#fbbf24"}]},
+    {"id": "p10","title": "Campera Niño", "category": "kids", "price": "59990", "image": "images/campera-kid.svg", "sizes": ["T6","T8"], "colors":[{"name":"Verde","hex":"#10b981"},{"name":"Azul","hex":"#60a5fa"}]}
+  ]
+}

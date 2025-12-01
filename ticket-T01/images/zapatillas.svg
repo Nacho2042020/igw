@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <rect width="600" height="600" rx="24" fill="#fff"/>
+  <g transform="translate(40,120)">
+    <ellipse cx="180" cy="80" rx="140" ry="60" fill="#eef2ff" stroke="#cfe6ff"/>
+    <rect x="40" y="40" width="280" height="80" rx="36" fill="#fff"/>
+    <text x="12" y="18" font-size="14" fill="#0b0b0b">Zapatillas</text>
+  </g>
+</svg>

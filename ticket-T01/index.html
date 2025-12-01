@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TICKET T01 — SOLO DEPORTE (Demo)</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">SOLO DEPORTE</a>
+        <nav class="nav">
+          <a href="#coleccion">Colección</a>
+          <button id="cart-toggle" class="nav-btn">Carrito <span id="cart-count" class="cart-count">0</span></button>
+          <a href="related-2.html">Productos</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-frame container">
+      <section class="hero-card">
+        <div class="hero-content">
+          <h1 class="title hero-title">NUEVA COLECCIÓN PERFORMANCE</h1>
+          <p class="lead">Indumentaria deportiva diseñada para el rendimiento: tejidos técnicos, ajuste seguro y estilo urbano. Inspirado en el estilo "Solo Deporte" (mockup).</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#coleccion">VER COLECCIÓN</a>
+            <a class="btn ghost" href="related-1.html">VER GUÍA DE TALLAS</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="images/product-1.svg" alt="destacado" class="product-img">
+          <div class="deco deco-1" aria-hidden="true"></div>
+          <div class="deco deco-2" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section id="coleccion" class="product-section">
+        <h2 class="section-title">COLECCIÓN DESTACADA</h2>
+
+        <div class="filters">
+          <button class="filter-btn" data-cat="all">Todos</button>
+          <button class="filter-btn" data-cat="men">Hombres</button>
+          <button class="filter-btn" data-cat="women">Mujeres</button>
+          <button class="filter-btn" data-cat="kids">Niños</button>
+        </div>
+
+        <div id="product-grid" class="product-grid" aria-live="polite">
+          <!-- Productos cargados dinámicamente -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>Ticket: T01 · Prototipo Solo Deporte · Demo UI</small>
+      </div>
+    </footer>
+  <!-- Product detail modal -->
+    <div id="product-modal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-action="close"></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" data-action="close" aria-label="Cerrar">×</button>
+        <div class="modal-body">
+          <div class="modal-media">
+            <img id="modal-img" src="images/product-1.svg" alt="Preview" />
+            <div id="modal-color-overlay" class="color-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="modal-info">
+            <h3 id="modal-title">Producto</h3>
+            <p id="modal-price" class="price">$0</p>
+            <div id="modal-sizes" class="sizes">Talles: </div>
+            <div class="color-list" id="modal-colors" aria-label="Colores disponibles"></div>
+            <div class="modal-actions">
+              <button class="btn primary" id="modal-add">AÑADIR</button>
+              <button class="btn ghost" data-action="close">CERRAR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart sidebar -->
+    <aside id="cart-sidebar" class="cart-sidebar" aria-hidden="true">
+      <header class="cart-header">
+        <h3>Tu carrito</h3>
+        <button id="cart-close" class="modal-close" aria-label="Cerrar carrito">×</button>
+      </header>
+      <div id="cart-items" class="cart-items">
+        <!-- items -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-summary">Total: <strong id="cart-total">$0</strong></div>
+        <div class="cart-actions"><button id="checkout-btn" class="btn primary">FINALIZAR COMPRA</button></div>
+      </div>
+    </aside>
+
+    <script src="products.js"></script>
+  </body>
+</html>

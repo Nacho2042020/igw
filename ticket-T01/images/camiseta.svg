@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <rect width="600" height="600" rx="24" fill="#fff"/>
+  <g transform="translate(60,60)">
+    <path d="M80 40 L220 40 L260 100 L340 100 L380 40 L520 40 L520 240 L80 240 Z" fill="#eaf2ff" stroke="#cfe6ff"/>
+    <text x="12" y="18" font-size="14" fill="#0b0b0b">Camiseta</text>
+  </g>
+</svg>
